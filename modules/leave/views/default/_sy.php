@@ -1,0 +1,13 @@
+
+
+<div class="well form-inline">
+
+    <?php echo CHtml::beginForm(); ?>
+    <div style="alignment-baseline:5px; ">  
+        <label>SY (eg. 2013-2014)</label>
+        <?php echo CHtml::textField('sy',$sy); ?>
+        <?php echo CHtml::htmlButton('<i class="icon-search icon-white"></i> Search', array('class' => 'btn btn-success', 'type' => 'submit', 'name' => 'submit')); ?>
+    </div>
+    <?php echo CHtml::endForm(); ?>
+</div><!-- form -->
+

@@ -1,0 +1,21 @@
+2016/03/06 09:45:15 [error] [exception.CException] exception 'CException' with message 'Property "JobPosting.posted_by" is not defined.' in /Applications/XAMPP/xamppfiles/htdocs/pims/framework/base/CComponent.php:173
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/pims/framework/db/ar/CActiveRecord.php(161): CComponent->__set('posted_by', '524')
+#1 /Applications/XAMPP/xamppfiles/htdocs/pims/protected/modules/recruitment/controllers/DefaultController.php(71): CActiveRecord->__set('posted_by', '524')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pims/framework/web/actions/CInlineAction.php(49): DefaultController->actionCreate()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pims/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pims/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /Applications/XAMPP/xamppfiles/htdocs/pims/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /Applications/XAMPP/xamppfiles/htdocs/pims/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /Applications/XAMPP/xamppfiles/htdocs/pims/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /Applications/XAMPP/xamppfiles/htdocs/pims/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /Applications/XAMPP/xamppfiles/htdocs/pims/framework/web/CController.php(291): CFilterChain->run()
+#10 /Applications/XAMPP/xamppfiles/htdocs/pims/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Applications/XAMPP/xamppfiles/htdocs/pims/framework/web/CWebApplication.php(282): CController->run('create')
+#12 /Applications/XAMPP/xamppfiles/htdocs/pims/framework/web/CWebApplication.php(141): CWebApplication->runController('recruitment/def...')
+#13 /Applications/XAMPP/xamppfiles/htdocs/pims/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /Applications/XAMPP/xamppfiles/htdocs/pims/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/pims/index.php?r=recruitment/default/create
+HTTP_REFERER=http://localhost/pims/index.php?r=recruitment/default/create
+---
