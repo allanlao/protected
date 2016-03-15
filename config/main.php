@@ -80,7 +80,7 @@ return array(
 	*/	
 		
 		'db'=>array(
-				'connectionString' => 'mysql:host=localhost;dbname=hrmis_avc',
+				'connectionString' => 'mysql:host=localhost;dbname=hris',
 				'emulatePrepare' => true,
 				'username' => 'root',
 				'password' => '',
@@ -112,11 +112,12 @@ return array(
 	// using Yii::app()->params['paramName']
 	 'params' => array(
         // this is used in contact page
-        'adminEmail' => 'admin@avc.edu',
+        'adminEmail' => 'admin@gmail.edu',
         'clinic_head' => 1070, //
         'hr_head' => 841, //
         'director' => 24, //
         'hr_email' => 'hr@avc.edu',
-        'company_name' => 'Abra Valley Colleges HRIS'
+        'company_name' => 'Abra Valley Colleges HRISxx',
+        'email_domain' => 'gmail.com',
     ),
 );

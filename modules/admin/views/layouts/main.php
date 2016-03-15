@@ -50,7 +50,7 @@
     				'items'=>array(
     					
 						array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-						array('label'=>Yii::app()->user->getState('email').'@gmail.com','icon'=>'briefcase white' ,'visible'=>!Yii::app()->user->isGuest,
+						array('label'=>Yii::app()->user->getState('email').Yii::app()->params['email_domain'],'icon'=>'briefcase white' ,'visible'=>!Yii::app()->user->isGuest,
 						'items'=>array(
 								array('label'=>'Log Out','url'=>array('/site/logout')),
 								))

@@ -54,11 +54,6 @@ return array (
         'bizRule' => NULL,
         'data' => NULL,
       ),
-      'alao' => 
-      array (
-        'bizRule' => NULL,
-        'data' => NULL,
-      ),
     ),
   ),
   'leaveAdmin' => 
