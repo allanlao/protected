@@ -29,7 +29,7 @@ class DefaultController extends Controller {
                 'roles' => array('user'),
             ),
         		array('allow', // allow authenticated user to perform 'create' and 'update' actions
-        				'actions' => array( 'updateJob','delete','active'),
+        				'actions' => array( 'updateJob','delete','active','updateTermination'),
         				'roles' => array('hradmin'),
         		),
             array('deny', // deny all users
@@ -90,6 +90,10 @@ class DefaultController extends Controller {
         $departmentList = CHtml::listData($departments, 'id', 'name');
         $supervisorList = CHtml::listData($supervisors, 'emp_number', 'fullname');
 
+
+        $lastNumber = Employee::model()->find(array('select'=>'emp_number','order'=>'emp_number desc'));
+      
+        $model->emp_number = $lastNumber->emp_number + 1;
 
         $this->render('create', array(
             'model' => $model, 'departmentList' => $departmentList, 'supervisorList' => $supervisorList,
@@ -226,6 +230,31 @@ class DefaultController extends Controller {
         }
 
         $this->render('update_job', array(
+            'model' => $model,
+        ));
+    }
+
+
+    public function actionUpdateTermination() {
+        $emp_number = Yii::app()->session['profile_no'];
+            
+        $model = $this->loadModel($emp_number);
+
+        // Uncomment the following line if AJAX validation is needed
+        // $this->performAjaxValidation($model);
+
+
+        if (isset($_POST['Employee'])) {
+            $model->attributes = $_POST['Employee'];
+
+            echo $model->emp_department_code;
+            if ($model->save()) {
+                Yii::app()->user->setFlash('success', '<strong>Well done!</strong> You have updated the Termination Details.');
+                $this->redirect(array('updateTermination'));
+            }
+        }
+
+        $this->render('update_termination', array(
             'model' => $model,
         ));
     }

@@ -117,7 +117,12 @@ return array(
         'hr_head' => 841, //
         'director' => 24, //
         'hr_email' => 'hr@avc.edu',
-        'company_name' => 'Abra Valley Colleges HRISxx',
+        'company_name' => 'Abra Valley Colleges HRIS',
+        'company'=>  'Abra Valley Colleges',
+        'address'=>  'Bangued, Abra',
+        'hr_signatory'=>'Queenie Borgono',
+        'hr_position'=>'Department Head,HRD',
         'email_domain' => 'gmail.com',
+
     ),
 );

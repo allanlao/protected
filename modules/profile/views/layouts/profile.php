@@ -36,6 +36,7 @@ else
   
             <li class="active"><a href="#"><i class='icon-white icon-ok-sign'></i>Employment</a></li>
             <li><a href="index.php?r=profile/default/updateJob">Job Details</a></li>
+            <li><a href="index.php?r=profile/default/updateTermination">Termination Details</a></li>
 
             <li class="active"><a href="#"><i class='icon-white icon-ok-sign'></i>Qualification</a></li>
             <li><a href="index.php?r=profile/empWorkExperience/create">Work Experience</a></li>

@@ -33,7 +33,8 @@
             'class'=>'bootstrap.widgets.TbMenu',
             'items'=>array(
                array('label'=>'Home', 'url'=>array('/site/index')),
-               array('label'=>'Users', 'url'=>array('/admin/default/index')),  
+               array('label'=>'Users', 'url'=>array('/admin/default/index')), 
+               array('label'=>'Reports', 'url'=>array('/admin/pdf/certificates')),   
                array('label'=>'Support Tables', 'url'=>'#','visible'=>Yii::app()->user->checkAccess('evaluationAdmin'),'itemOptions'=>array('class'=>'dropdown','tabindex'=>"-1"),'linkOptions'=>array('class'=>'dropdown-toggle','data-toggle'=>"dropdown"),
             				'items'=>array(
             						array('label'=>'Department', 'url'=>array('department/create')),
