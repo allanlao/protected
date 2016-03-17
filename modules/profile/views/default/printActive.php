@@ -33,7 +33,7 @@ $tbl =	'<style>
 		<tr>
 		    <th width="10%">No.</th>
  			<th width="60%">Name</th>
- 			<th width="30%">Department</th>
+ 			<th width="30%">Position</th>
 		</tr>'
 		;
 
@@ -52,10 +52,13 @@ $tbl =	'<style>
             $ctr = 1;
             }
 
+            	if (is_null($employee->empPosition)){
+            $position =  "";
+                 }else{
+                 	 $position = $employee->empPosition->position_desc;
+                 }
 
-            $position = "";
-
-            //echo $employee->empPosition->position_desc;
+          
 
      		$tbl .= 		
 		 
