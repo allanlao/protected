@@ -47,6 +47,8 @@ if (strText != "")
           }
     }
 }
+
+
 		
 		
 function  DoAddRange()
@@ -74,6 +76,11 @@ function  DoAddRange()
   var ampm = "wd";
   var start = new Date(startText);
   var end = new Date(endText);
+
+  if (start > end){
+     alert("Date range is invalid!");
+     return;
+  }
 
     while(start <= end){
  
@@ -301,7 +308,40 @@ $readOnly = false;
                         'showAnim' => 'fold',
                         'dateFormat' => 'yy-mm-dd',
                         'minDate' => '-30',
-                    
+                        'onSelect' => 'js:function( selectedDate ) {
+                               // #end_date is the ID of end_date input text field
+                          var lp = document.getElementById("EmpLeaves_leave_type").value;
+                        
+                          var start_date = new Date(selectedDate);
+                        
+                          var end_date = new Date(selectedDate);
+                        
+                      
+
+                        if (lp =="pl"){
+                           end_date.setDate(start_date.getDate() + 7);
+                        }else if(lp=="ml"){
+                           end_date.setDate(start_date.getDate() + 60);
+                        }else if (lp=="mlc"){
+                          end_date.setDate(start_date.getDate() + 72);
+                        }else{
+                            end_date.setDate(start_date.getDate() + 1);
+                        }
+
+  
+                          var dd = end_date.getDate();
+                          var mm = end_date.getMonth() + 1;
+                          var y = end_date.getFullYear();
+
+                           selectedDate = y + "-" + mm + "-"+ dd;
+                        
+
+
+                      $("#dpDateTo").datepicker("setDate", selectedDate );
+                      
+
+                       }',
+ 
                     ),
                     'htmlOptions' => array(
                        'style' => 'height:20px; width:100px',
@@ -317,7 +357,7 @@ $readOnly = false;
                     'options' => array(
                         'showAnim' => 'fold',
                         'dateFormat' => 'yy-mm-dd',
-						'size'=>5,
+						            'size'=>5,
                         'minDate' => '-15',
                        
                     ),

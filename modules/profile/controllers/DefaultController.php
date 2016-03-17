@@ -29,7 +29,7 @@ class DefaultController extends Controller {
                 'roles' => array('user'),
             ),
         		array('allow', // allow authenticated user to perform 'create' and 'update' actions
-        				'actions' => array( 'updateJob','delete','active','updateTermination'),
+        				'actions' => array( 'updateJob','delete','active','updateTermination','printActive'),
         				'roles' => array('hradmin'),
         		),
             array('deny', // deny all users
@@ -339,7 +339,21 @@ class DefaultController extends Controller {
         }
     }
 
-    
+    public function actionPrintActive(){
+ $this->layout = "/layouts/column1";
+        $employees = Employee::model()->findAll(array('join'=>'join hs_hr_department as b on t.emp_department_code = b.id',
+                        'condition'=>'isActive = "Y"',
+                        'order'=>'b.shortname, t.emp_lastname'));
+
+        
+        
+        
+        $this->render('printActive',array(
+                'employees'=>$employees,
+        ));
+    }
+
+
     public function actionActive(){
        $this->layout = "/layouts/column1";
     	$data_provider = new CActiveDataProvider('Employee', array(

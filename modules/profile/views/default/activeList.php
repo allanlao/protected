@@ -9,18 +9,18 @@ $box = $this->beginWidget ( 'bootstrap.widgets.TbBox', array (
 			//	'class' => 'bootstrap-widget-table' 
 		),
 		
-		/* 'headerButtons' => array (
+		'headerButtons' => array (
 				array (
 						'class' => 'bootstrap.widgets.TbButton',
 						'type' => 'primary', // '', 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
 						'label' => 'Print',
 						'url' => array (
-								'report/admin' 
+								'default/printActive' 
 						),
-						'size' => 'small' 
+						//'size' => 'small' 
 				)
 				 
-		)  */
+		)  
 )
  ); 
 ?>

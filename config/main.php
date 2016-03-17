@@ -120,8 +120,8 @@ return array(
         'company_name' => 'Abra Valley Colleges HRIS',
         'company'=>  'Abra Valley Colleges',
         'address'=>  'Bangued, Abra',
-        'hr_signatory'=>'Queenie Borgono',
-        'hr_position'=>'Department Head,HRD',
+        'hr_signatory'=>'Dr. Francis Borgono',
+        'hr_position'=>'President',
         'email_domain' => 'gmail.com',
 
     ),
